@@ -39,28 +39,12 @@
       <section class="container my-5">
         <div class="row">
           <h1>Добавить мнение о фильме</h1>
-          <div class="col-12 col-lg-7 my-5">            
-            <form>       
-              <input 
-                type="text" 
-                class="form-control form-control-lg py-3 mb-3" 
-                name="" 
-                placeholder="Введите название фильма"
-              >
-              <input 
-              type="url" 
-              class="form-control form-control-lg py-3 mb-3" 
-              name="" 
-              placeholder="Добавьте ссылку на IMDb"
-              >
-              <textarea 
-              cols="40" rows="3"
-              class="form-control form-control-lg py-3 mb-3" 
-              name="" 
-              placeholder="Напишите мнение"
-              ></textarea>
-              <input type="submit" class="button px-5 py-3 btn" value="Отправить">
-            </form>
+          <div class="col-12 col-lg-7 my-5">
+            {{ form.csrf_token }}
+            {{ form.title.label }} {{ form.title }}<br />
+            {{ form.text.label }} {{ form.text }}<br />
+            {{ form.source.label }} {{ form.source }}<br />
+            {{ form.submit }}
           </div>
           <div class="col-12 col-lg-5">
             <img class="img-fluid mx-auto d-block" src="static/img/illustration.png" alt="">
